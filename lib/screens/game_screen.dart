@@ -49,14 +49,10 @@ class _GameScreenState extends State<GameScreen> {
       } else {
         var from = tubes[selectedTubeIndex!];
         var to = tubes[index];
-        debugPrint("From Ball : ${from.balls.first.color.toString()}");
-        debugPrint("To Ball : ${to.balls.firstOrNull?.color.toString()}");
-        debugPrint("Can Add : From Balls : ${from.balls.length} To Balls : ${to.balls.length} \n Can Add: ${to.canAdd(from.balls.first)} ${from.balls.isNotEmpty && to.canAdd(from.balls.first)}");
         if (from.balls.isNotEmpty && to.canAdd(from.balls.first)) {
           final ball = from.popBall();
           if (ball != null) {
             to.pushBall(ball);
-            debugPrint("Pushed Ball : ${ball.color.toString()}");
           }
         }
 
